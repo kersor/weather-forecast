@@ -1,0 +1,11 @@
+.celc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translateX(210%);
+  width: 8px;
+  height: 8px;
+  border: 2px solid #2f3956;
+  border-radius: 50%;
+}

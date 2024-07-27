@@ -105,3 +105,8 @@ export interface ILocation {
     localtime_epoch: number;
     localtime:       string;
 }
+
+export interface IPosition {
+    latitude: number;
+    longitude: number;
+}
