@@ -1,7 +1,10 @@
 import React from 'react'
 import { Sun } from 'lucide-react';
+import { useGetWeatherQuery } from './store/api/weather.api';
 
 const App = () => {
+  const {data} = useGetWeatherQuery('Moscow')
+
   return (
     <div className='bg-[rgba(239,239,239,0.5)] w-full h-screen flex justify-center items-center'>
      <div className='max-w-[600px] w-full h-[700px] grid grid-cols-1 gap-[20px]'>
