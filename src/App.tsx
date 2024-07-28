@@ -39,6 +39,8 @@ const App = () => {
     arrows: false
   };
 
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
   return (
     <div className='bg-[rgba(239,239,239,0.5)] w-full h-screen flex justify-center items-center'>
       <div className='max-w-[600px] w-full'>
@@ -60,21 +62,35 @@ const App = () => {
             <Slider {...settings} >
               {
                 data?.forecast.forecastday[0].hour.map(item => 
-                  <div className='flex justify-center text-[#343c57]'>
+                  <div key={item.is_day} className='flex justify-center text-[#343c57]'>
                     <div className={`pt-[10px] text-[14px] relative flex justify-center items-center text-center font-bold` }>
                       {item.temp_c.toFixed()}
-                      {/* <span className={`${styles.celc}`}></span> */}
                     </div>
                     <div className='flex justify-center'><img src={`${item.condition.icon}`} alt="" /></div>
-                    <div className='text-[18px] font-bold text-center'>{item.time?.slice(11)}</div>
+                    <div className=' font-bold text-center'>{item.time?.slice(11)}</div>
                   </div>
                 )
               }
             </Slider>
           </div>
-        </div>
+          <div className='h-[200px] w-full shadow-[0_0_10px_3px_rgba(146,146,146,0.4)] rounded-[50px] flex items-center justify-between px-[50px]'>
+            <Slider {...settings} >
+              {
+                data?.forecast.forecastday.map(item => 
+                  <div className='flex justify-center text-[#343c57]'>
+                    <div className={`pt-[10px] text-[14px] relative flex justify-center items-center text-center font-bold` }>
+                      {item.day.avgtemp_c.toFixed()}
+                    </div>
+                    <div className='flex justify-center'><img src={`${item.day.condition.icon}`} alt="" /></div>
+                    <div className=' font-bold text-[12px] text-center mt-[10px]'>{String(new Date(item.date)).slice(0, 3)}<br/></div> 
+                  </div>
+                  
+              )
+              }
+            </Slider>
+          </div>
+        </div>  
       </div>
-     
     </div>
   )
 }
