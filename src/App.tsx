@@ -73,7 +73,7 @@ const App = () => {
             <Slider {...settings} >
               {
                 data?.forecast.forecastday.map(item => 
-                  <div className='flex justify-center text-[#343c57]'>
+                  <div key={+item.date} className='flex justify-center text-[#343c57]'>
                     <div className={`pt-[10px] text-[14px] relative flex justify-center items-center text-center font-bold` }>
                       {item.day.avgtemp_c.toFixed()}
                     </div>

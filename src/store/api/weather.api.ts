@@ -6,7 +6,7 @@ const API_KEY = '32efff36bc7e49fdb2a124010242707'
 
 export const weatherApi = createApi({
     reducerPath: 'weatherApi',
-    baseQuery: fetchBaseQuery({baseUrl: '/'}),
+    baseQuery: fetchBaseQuery({baseUrl: 'https://api.weatherapi.com/'}),
     endpoints: (builder) => ({
         getWeather: builder.query<IEmpty, string>({
             query: (city) => ({
