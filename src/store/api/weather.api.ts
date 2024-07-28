@@ -13,7 +13,8 @@ export const weatherApi = createApi({
                 url: 'v1/forecast.json',
                 params: {
                     key: API_KEY,
-                    q: city
+                    q: city,
+                    days: 10
                 }
             })
         }),

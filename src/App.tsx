@@ -61,7 +61,7 @@ const App = () => {
               {
                 data?.forecast.forecastday[0].hour.map(item => 
                   <div className='flex justify-center text-[#343c57]'>
-                    <div className={`pt-[10px] text-[14px] font-semibold relative flex justify-center items-center text-center font-bold` }>
+                    <div className={`pt-[10px] text-[14px] relative flex justify-center items-center text-center font-bold` }>
                       {item.temp_c.toFixed()}
                       {/* <span className={`${styles.celc}`}></span> */}
                     </div>
